@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>...</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.0/jquery.mobile-1.4.0.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	
+	<!-- jQuery CDN -->
+	<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+	<script src="http://code.jquery.com/mobile/1.4.0/jquery.mobile-1.4.0.min.js"></script>
+
+	<!-- Lokale Library -->
+	<!-- <script type="text/javascript" src="../../libs/jquery-1.10.2/jquery-1.10.2.js"></script> -->
+</head>
+
+<body>
+	<div class="container">
+		<h1>Traversing Methods</h1>
+		<p>The following products are based on ABAP.</p>
+		<ul>
+			<li>SAP ERP</li>
+			<ul>
+				<li>SD</li>
+				<li>MM</li>
+				<li>FI</li>
+			</ul>
+			<li>SAP CRM</li>
+			<li>SAP BI</li>
+			<li>SAP SCM</li>
+		</ul>
+	</div>
+	
+	
+	<!-- Block 1: Header -->
+	<div data-role="header">
+		<h1>Header</h1>
+	</div>
+	
+	<!-- Block 2: Content -->
+	<div data-role="content" class="ui-content">
+		<ul data-role="listview" data-inset="true">
+			<li class="blue"><a href="#" class="audi">Audi</a></li>
+			<li><a href="#">BMW</a></li>
+			<li><a href="#">Mercedes</a></li>
+			<li><a href="#">Opel</a></li>
+			<li class="red"><a href="#">Porsche</a></li>
+		</ul>
+	</div>
+	
+	<!-- Block 3: Footer -->
+	<div data-role="footer">
+		<h4>Footer</h4>
+	</div>
+
+
+	<script>
+		$('ul').children().eq(1).next().addClass('red');
+		$('ul ul').children().eq(2).addClass('blue');
+		var a = $('ul ul').children().first().text('SAP-Module');
+		console.log(a);
+		$('ul ul li:first').text('SD');
+		$('ul ul li').parent().addClass('yellow');
+	</script>
+</body>
+
+</html>
